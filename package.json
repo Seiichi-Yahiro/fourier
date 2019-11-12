@@ -1,36 +1,42 @@
 {
-  "name": "fourier",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@types/jest": "24.0.22",
-    "@types/node": "12.12.7",
-    "@types/react": "16.9.11",
-    "@types/react-dom": "16.9.4",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
-    "react-scripts": "3.2.0",
-    "typescript": "3.7.2"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+    "name": "fourier",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "mathjs": "6.2.3",
+        "lodash": "4.17.15"
+    },
+    "devDependencies": {
+        "@types/lodash": "4.14.146",
+        "@types/mathjs": "6.0.2",
+        "@wasm-tool/wasm-pack-plugin": "1.0.0",
+        "acorn": "7.0.0",
+        "awesome-typescript-loader": "5.2.1",
+        "css-loader": "3.2.0",
+        "html-webpack-plugin": "3.2.0",
+        "husky": "3.0.3",
+        "mini-css-extract-plugin": "0.8.0",
+        "node-sass": "4.12.0",
+        "prettier": "1.18.2",
+        "pretty-quick": "1.11.1",
+        "rimraf": "3.0.0",
+        "sass-loader": "7.2.0",
+        "tslint": "5.18.0",
+        "tslint-react": "4.0.0",
+        "tslint-react-hooks": "2.2.1",
+        "typescript": "3.5.3",
+        "webpack": "4.39.2",
+        "webpack-cli": "3.3.6",
+        "webpack-dev-server": "3.8.0"
+    },
+    "scripts": {
+        "start": "webpack-dev-server --config webpack.config.js",
+        "build:dev": "rimraf wasm_build build && webpack --config webpack.config.js",
+        "pretty-quick": "pretty-quick"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "pretty-quick --staged"
+        }
+    }
 }
